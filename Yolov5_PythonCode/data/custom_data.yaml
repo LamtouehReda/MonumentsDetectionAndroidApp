@@ -1,0 +1,8 @@
+
+train: ../data/images/train
+val: ../data/images/val  
+test: ../data/images/test
+
+
+nc: 6  # number of classes
+names: ['Bab Chellah Rabat','Bab Lahdim Meknes','Tour Hassan Rabat','Hassan2 Mosque','Koutoubia Marrakech','Menara Marrakech']  # class names

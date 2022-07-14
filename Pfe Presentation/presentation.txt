@@ -1,0 +1,68 @@
+                                                          --------------------------------------------------------------PROBLEMATIQUE ET OBJECTIF-------------------------------------------------------------------
+
+aujourd'hui nous allons vous présenter notre projet de fin d'etude concernant la detection et la reconnaissance visuelle des monuments touristiques, ce projet est réalisé par Hamid Oufakir et Reda Lamtoueh et encadre par la professeur Sara Sekkate et Siham Akil.
+des milliers de touristes viennent chaque année au maroc, et bien sur ils s'intéressent à certains sites et monuments et veulent en savoir plus sur ces sites, mais le problème c'est qu'ils n'ont aucune idée de comment les chercher sur le web, eh bien ce projet propose une solution pour résoudre ce problème.
+L’objectif principal de ce projet est le développement d’un système d’identification automatiques de sites touristiques en temps-réel, en prenant des photos ou en récupérant des images sur internet. ,et cela sera réalisé en utilisant une technologie parmi  les technologies du deep learning, c'est la detection d'objets.
+
+
+
+Commençons d'abord par quelques termes techniques qui nous amèneront progressivement au sujet principal
+
+l'intelligence artificielle (IA), la capacité d'un ordinateur numérique ou d'un robot contrôlé par ordinateur à effectuer des tâches associées aux êtres humains.
+
+L'apprentissage automatique , est l'utilisation de données et d'algorithmes pour imiter la façon dont les humains apprennent.
+
+L'apprentissage en profondeur est un sous-domaine de l'apprentissage automatique concerné par des algorithmes inspirés de la structure et de la fonction du cerveau appelés réseaux de neurones artificiels.
+
+Cette image représente la relation entre l'AI, le ML et le DL, comme on peut le voir, le DL est un sous-domaine de ML, qui est lui-même un sous-domaine d'AI
+
+maintenant, rapprochons-nous de la technologie d'apprentissage en profondeur qui nous intéresse, la détection d'objets.
+
+La détection d'objets consiste à détecter des instances d'objets d'une certaine classe dans une image.
+
+on peut dire que la détection d'objets combine deux techniques de vision par ordinateur, classification et localisation d'objets, classification consiste a determiner le type ou la classe d'un objet dans une image, localisation d'objets est de localiser la présence d'objets dans une image et indiquer leur emplacement avec une boîte englobante.
+
+il existe deux types d'algorithmes de détection d'objets, également appelés famille RCNN et famille YOLO, la principale différence entre les deux est que les algorithmes de détection d'objets en deux étapes ou la famille RCNN décomposent le problème de détection d'objets en deux étapes :
+Détection d'éventuelles régions d'objets.
+Determiner une classe pour chaque region.
+ce type d'algorithmes nécessitait donc plusieurs itérations, ralentissant ainsi la vitesse de détection de l'algorithme et empêchant la détection en temps réel.
+
+les algorithmes en une étape ou la famille YOLO proposent l'utilisation d'un réseau de neurones de bout en bout qui fait des prédictions de boîtes englobantes et de probabilités de classe en même temps, avec une seule iteration, ce qui le rend beacoup plus rapide.
+
+maintenant Hamid va vous présenter la planification et la conception de ce projet
+
+-------------------------------------------------------------------REALISATION D'UNE MODELE DE  DETECTION D'OBJET----------------------------------------------------------
+
+Comme je l'ai mentionné précédemment, il existe deux famille d'algorithmes de détection d'objets
+Pour ce projet nous avons choisi YOLO pour realise notre model
+
+YOLO est l'abréviation du terme "You Only Look Once". Il s'agit d'un algorithme qui détecte et reconnaît divers objets dans une image (en temps réel). 
+
+L'algorithme YOLO utilise des réseaux de neurones convolutionnels (CNN) . Comme le nom indique, l'algorithme ne nécessite qu'une seule propagation vers l'avant à travers un réseau de neurones pour détecter des objets.
+
+la première version de yolo a été publiée en 2015, puis chaque version a proposé une solution aux problèmes de la version précédente, dans notre projet, nous utilisons la dernière version de yolo, yolov5
+
+Yolo est le meilleur pour la détection d'objets pour les raisons suivantes:
+
+pour former un modèle à l'aide de YoloV5 il y'a quelque parametres a determiner, le premiere parametre est la taille des images, pour la taille des images on a travaille avec 640 qui est la taille des images par defaut en YoloV5 et qui donne les meilleurs resultats.
+Le deuxieme parametres est le nombre des lots, le nombre des lots est le nombres des echantillons qui seront transmis au reseau de neurons chaque fois, on a choisi egalment le nombre des lots par defaut en YoloV5.
+Le dernier est le nombres des epoques, une epoque correspond au moment ou toutes la base de donnees est transmise en avant et en arriere via un reseau de neurons une seul fois, 100 est le nombres des epoques qui nous donne la precision maximale.
+
+Notre base de données apres l'augmentation contient 3350 images contre 300 avant l'augmentation et on a divise la base de donnees en 80% pour le train, 10% pour la validation et 10% pour le test, on a choisi cette division car elle nous donne les meilleurs resultats
+
+Comme environment d'entrainement on a travaillé avec google Colab car il y'a une tutoriel de YoloV5 en colab et colab fournit des resources de calcul tres puissantes ce qui ren l'entrainment plus rapide.
+
+on peut voir que la précision global après l'augmentation des données est plus élevée(94.7% contre 86.7% avant l'augmentation), ce qui signifie que l'augmentation des données est importante pour ameliorer les performances du modèle.
+
+---------------------------------------------------------------------------------------REALISATION DE L'APPLICATION MOBILE--------------------------------------------------------------------------------------
+
+Pour l'application mobile, nous avons choisi de travailler avec le studio Android car nous sommes familiers avec le langage de programmation java.
+
+Pour intégrer le modèle dans l'application, nous avons utilisé Chaquopy qui fournit des outils pour inclure des composants Python dans une application Android, cette méthode a rendu la détection un peu lente, mais nous n'avions pas d'autre option car toutes les méthodes basées sur le cloud que nous avons trouvées étaient soit payantes ou avoir d'autres problèmes.
+
+L'application mobile que nous avons réalisée est très facile à utiliser, nous avons ajouté autant de fonctionnalités que possible pour que l'utilisateur (les touristes dans notre cas) soit satisfait lors de son utilisation.
+
+nous avons inclus un choix de langue, donc lorsque l'utilisateur ouvre l'application, il peut choisir entre l'anglais et le français.
+
+Ensuite, l'utilisateur doit choisir s'il veut prendre une photo de l'appareil photo ou choisir une image de la galerie, une fois qu'il a choisi l'image avec le monument, il doit appuyer sur le bouton de détection, après quelques secondes, une boîte englobante rencontrera le monument dans l'image avec le nom du monument et la précision, et sous l'image il y aura un paragraphe contenant quelques détails sur le monument et un lien redirige l'utilisateur vers google avec le nom du monument dans la barre de recherche.
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Morocco Lens</string>
+    <string name="About"><u>About</u></string>
+    <string name="photo">Take a picture</string>
+    <string name="gallery">Choose an image</string>
+    <string name="detect">Start detection</string>
+</resources>

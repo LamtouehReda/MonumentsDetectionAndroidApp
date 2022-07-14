@@ -1,0 +1,33 @@
+1. pourquoi n'avez-vous pas choisi plus de sites?
+
+-Car pour de nombreux sites il n'y a pas assez d'images, et pour certains sites il n'ya pas qu'un seul objet a detecter.
+
+2. pourquoi vous avez choisi 60 images pour chaque mounuments?
+-pour certains sites on n'a pas pu collecter plus de 60 images , alors nous avons choisi 60 images pour chaque monument afin que notre base de données soit équilibrée.
+
+3. les images de votre base de données ont-elles le même type et les mêmes dimensions ?
+-non, car nous avons essayé de collecter le plus d'images possible, mais la majorité des images sont au format JPG, mais les dimensions sont différentes, et aussi yolo redimonsione toutes les images de la base de donnees, donc ce n'est pas un problème.
+
+4.pourquo l'augmentation des donnees?
+- pour former plus d'exemples pour entrainer le modèle, et ainsi améliorer la précision du modèle.
+
+5. Comment YoloV5 extraire les caracteristiques des images?
+- YoloV5 utilise CSPDarknet CNN qui est pré-entrainé sur ImageNet comme BACKBONE pour extraire les caracteristique des images.nous ne savons pas exactement comment fonctionne CSPDarknet, mais nous pouvons dire que le CSPNet divise la carte des fonctionnalités en deux parts (les cartes des fonctionnalités sont générées en appliquant des filtres ou des fonctionnalités détecteurs à l'image d'entrée ou à la sortie de la carte des caractéristiques des couches précédentes.) de la couche de base en deux parties, puis les fusionne.
+
+6. Pourquoi 640 comme taille d'image?
+640 est la taille d'image par défaut pour YOLOV5, si les images sont plus grandes, la précision sera plus élevée mais le processus sera lent, alors 640 est la taille qui donne la meilleure précision en moins de temps.
+
+7. Qu'est ce que Batch et pourquoi 16?
+Batch ou bien lot en francais est le nombres des echantillons qui seront transmis au reseau chaque fois, et 16 car il donne la precision la plus elevee.
+
+8.Qu'est ce que une epoch? Pourquoi 100?
+Une epoque correspond au moment ou toute la base de donnees est transmise en avant et en arriere via le reseau de neurons une seul fois, et 100 car il donne la precision la plus elevee.
+
+9. Pourquoi vous aves choisi 80 pour train 10 pour validation et 10 pour le test?
+nous avons trouvé que cette division est la division qui donne les meilleurs résultats pour former un modèle, nous avons également essayé de travailler avec d'autres divisions mais 80 10 10 reste la division qui donne la précision la plus elevee.
+
+10. Pourquoi Colab?
+Parceque il y'a un tutoriel pour YoloV5 sur Colab, en plus Colab fournit des resources de calcul puissantes qui rend le train plus rapide.
+
+11. qu'est ce que la precision, Rappel et map@.5
+Sont des metrics pour evaluer la performance d'un modele.

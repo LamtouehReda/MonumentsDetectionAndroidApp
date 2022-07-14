@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".MainActivity_result">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <Button
+                android:id="@+id/detectBtn"
+                android:layout_width="547dp"
+                android:layout_height="86dp"
+                android:layout_margin="30dp"
+                android:background="@drawable/bunt"
+                android:drawableLeft="@drawable/co50"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/white"
+                android:drawableTintMode="multiply"
+                android:drawingCacheQuality="auto"
+                android:duplicateParentState="false"
+                android:editable="false"
+                android:fontFamily="@font/aclonica"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="25dp"
+                android:text="@string/detect"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.475"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.694" />
+
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="816dp"
+                android:layout_height="846dp"
+                android:rotation="90"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/v1"
+                tools:layout_editor_absoluteY="-348dp" />
+
+            <ImageView
+                android:id="@+id/result"
+                android:layout_width="772dp"
+                android:layout_height="411dp"
+                android:layout_marginTop="172dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/monument"
+                android:layout_width="573dp"
+                android:layout_height="67dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/aclonica"
+                android:paddingLeft="100dp"
+                android:paddingTop="9dp"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/result" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="295dp"
+                android:layout_height="81dp"
+                android:fontFamily="@font/aclonica"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:text="Morocco Lens"
+                android:textColor="@color/black"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                tools:layout_editor_absoluteY="0dp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="829dp"
+                android:layout_height="804dp"
+                android:layout_marginTop="260dp"
+                android:rotation="-90"
+                android:textAlignment="gravity"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detectBtn"
+                app:layout_constraintVertical_bias="0.456"
+                app:srcCompat="@drawable/v1" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="97dp"
+                android:layout_height="94dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/vvv" />
+
+
+            <TextView
+                android:id="@+id/resultText"
+                android:layout_width="723dp"
+                android:layout_height="271dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="30dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/monument"
+                app:layout_constraintVertical_bias="0.061" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
